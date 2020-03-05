@@ -132,14 +132,12 @@ function post_author_label_activate()
     post_author_label_replace_template(
         'postbit',
         '{$post[\'groupimage\']}',
-        '{$post[\'groupimage\']}{$post[\'post_author_label\']}'
-    );
+        '{$post[\'groupimage\']}{$post[\'post_author_label\']}');
 
     post_author_label_replace_template(
         'postbit_classic',
         '{$post[\'groupimage\']}',
-        '{$post[\'groupimage\']}{$post[\'post_author_label\']}'
-    );
+        '{$post[\'groupimage\']}{$post[\'post_author_label\']}');
 }
 
 function post_author_label_deactivate()
