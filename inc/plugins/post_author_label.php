@@ -21,10 +21,9 @@ define('POST_AUTHOR_LABEL_NAME', 'Post Author Label');
 define('POST_AUTHOR_LABEL_VERSION', '1.0.0');
 
 define('POST_AUTHOR_LABEL_ROOT', str_replace('\\', '/', MYBB_ROOT));
-define('POST_AUTHOR_LABEL_PLUG_ROOT', POST_AUTHOR_LABEL_ROOT . 'inc/plugins/');
-define(
-    'POST_AUTHOR_LABEL_INC_ROOT',
-    POST_AUTHOR_LABEL_PLUG_ROOT . POST_AUTHOR_LABEL_ID . '/');
+define('POST_AUTHOR_LABEL_ROOT_PLUG', POST_AUTHOR_LABEL_ROOT . 'inc/plugins/');
+define('POST_AUTHOR_LABEL_ROOT_SELF',
+        POST_AUTHOR_LABEL_ROOT_PLUG . POST_AUTHOR_LABEL_ID . '/');
 
 // templates
 global $templatelist;
@@ -189,10 +188,10 @@ function post_author_label_plugin_directory(?string $path = null)
     if (! is_null($path)) {
         $path = trim(strtolower($path), '/');
 
-        return POST_AUTHOR_LABEL_INC_ROOT . $path . '/';
+        return POST_AUTHOR_LABEL_ROOT_SELF . $path . '/';
     }
 
-    return POST_AUTHOR_LABEL_INC_ROOT;
+    return POST_AUTHOR_LABEL_ROOT_SELF;
 }
 
 function post_author_label_replace_template(
