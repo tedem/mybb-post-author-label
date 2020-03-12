@@ -171,10 +171,8 @@ function post_author_label_load_template(string $filename, string $ex = 'tpl')
 {
     $filename = trim(strtolower($filename));
 
-    $file   = post_author_label_plugin_directory('templates')
-            . $filename
-            . '.'
-            . $ex;
+    $file = post_author_label_plugin_directory('templates')
+          . $filename . '.' . $ex;
 
     if (file_exists($file)) {
         return file_get_contents($file);
